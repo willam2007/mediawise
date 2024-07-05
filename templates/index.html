@@ -8,6 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <script type="text/javascript">
+        var map;
+    
+        DG.then(function () {
+            map = DG.map('map', {
+                center: [54.98, 82.89],
+                zoom: 13
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -27,8 +38,43 @@
         <div class="text montserrat-first">
         </div>
     </div>
-    <button class="firstbutton">Сгенерировать</button>
-    
+    <div class="bbutton">
+        <button class="firstbutton">Сгенерировать</button>
+    </div>
+
+
+
+    <div class="anketa_container">
+        <form id = "anketaForm">
+            <div class="age-container bottom-padding">
+                <label for="agetext">Возраст:</label><br>
+                <div class="min-max-container">
+                    <div class="min_age_container">
+                        <input type="number" class="low-high-frame text-style" id="age-from" name="age-from"
+                            placeholder="От">
+                    </div>
+                    <div class="max_age_container">
+                        <input type="number" class="low-high-frame text-style" id="age-to" name="age-to"
+                            placeholder="До">
+                    </div>
+                </div>
+            </div>
+            <div class="sex-container bottom-padding">
+                <label for="sex">Пол:</label><br>
+                <select id="SexStatus" class="frame-style text-style">
+                    <option value="m">Мужчины</option>
+                    <option value="w">Женщины</option>
+                </select><br>
+            </div>
+            <div class="buildboardNum-container bottom-padding right-padding">
+                <label for="buildboard">Количество контейнеров:</label><br>
+                <input type="number" class="frame-style text-style" id="buildboard" name="buildboard" required><br>
+            </div>
+        </form>
+    </div>
+
+    <div id="map" style="width:500px; height:400px"></div>
+
 </body>
 
 <footer>

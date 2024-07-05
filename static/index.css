@@ -20,6 +20,49 @@ header{
     font-size:40px;
 }
 
+.text-style{
+    font-family: "Montserrat", sans-serif;
+    color:#00ff08;
+    font-style:italic;
+    font-weight:lighter;
+    font-size:14px;
+}
+
+#anketaForm{
+    padding-top: 20px;
+    padding-left: 100px;
+}
+
+.bottom-padding{
+    padding-bottom: 10px;
+}
+
+.frame-style{
+    width: 300px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #aeaeae !important;
+    outline: none;
+}
+
+.low-high-frame{
+    width: 145px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #aeaeae !important;
+    outline: none;
+}
+
+.min-max-container{
+    display: flex;
+}
+
+.min_age_container{
+    padding-right: 10px;
+}
+
+
+
 .mediawiselogo img{
     position: absolute;
     left: 30px;
@@ -31,8 +74,31 @@ header{
     top: 20px;
 }
 
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.control label {
+    flex: 1;
+}
+
+.control select {
+    flex: 1;
+}
+
 body{
-    background-color: black;
+    background-color: rgb(185, 61, 61);
     height: 600px;
 }
 
@@ -44,6 +110,7 @@ body{
     text-align: center;
     display:inline-block;
     font-size: 18px;
+    margin: 10px;
     cursor:pointer;
     border-radius: 20px; 
     transition: background-color 0.3s ease;
