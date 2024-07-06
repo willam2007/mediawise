@@ -1,5 +1,6 @@
 var geoJsonLayers = [];  // Массив для хранения ссылок на слои GeoJSON
 var map;  // Глобальная переменная для хранения карты
+var selectedDistrictName = null;  // Переменная для хранения выбранного района
 
 function resetStyles() {
     for (var i = 0; i < geoJsonLayers.length; i++) {
@@ -23,6 +24,11 @@ function sendDistrictName(districtName) {
     .then(response => response.json())
     .then(data => console.log('Success:', data))
     .catch((error) => console.error('Error:', error));
+}
+
+function validateForm() {
+    document.getElementById('selectedDistrict').value = selectedDistrictName;
+    return true;
 }
 
 DG.then(function () {
@@ -51,6 +57,7 @@ DG.then(function () {
                             color: '#000000',
                             weight: 2
                         });
+                        selectedDistrictName = feature.properties.name;
                         sendDistrictName(feature.properties.name);
                     });
                     geoJsonLayers.push(layer);
@@ -70,6 +77,20 @@ function loadCoordinates() {
 function addMarker(lat, lon) {
     DG.marker([lat, lon]).addTo(map);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('anketaForm');
+    const checkboxes = document.querySelectorAll('input[name="options"]');
+    const submitButton = document.querySelector('.firstbutton');
+
+    form.addEventListener('submit', function(event) {
+        const checkedCheckboxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+        if (checkedCheckboxes.length < 1 || checkedCheckboxes.length > 3) {
+            event.preventDefault();
+            alert('Выберите от 1 до 3 вариантов.');
+        }
+    });
+});
 
 function loadMarkers(data) {
     console.log('Loaded data:', data);

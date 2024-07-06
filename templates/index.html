@@ -24,44 +24,45 @@
         </div>
     </header>
     <div class="main-container">
-        <form id="anketaForm" action="/submit" method="POST">
+        <form id="anketaForm" action="/submit" method="POST" onsubmit="return validateForm()">
             <div class="anketa_container">
                 <div class="age-container bottom-padding">
                     <label for="agetext" class="white-color">Возраст:</label><br>
                     <div class="min-max-container">
                         <div class="min_age_container">
                             <input type="number" class="low-high-frame text-style" id="age-i" name="age-from"
-                                placeholder="От" min="18" max="80">
+                                placeholder="От" min="18" max="80" required>
                         </div>
                         <div class="max_age_container">
                             <input type="number" class="low-high-frame text-style" id="age-to" name="age-to"
-                                placeholder="До" min="18" max="80">
+                                placeholder="До" min="18" max="80" required>
                         </div>
                     </div>
                 </div>
                 <div class="sex-container bottom-padding">
                     <label for="sex" class="white-color">Пол:</label><br>
-                    <select id="SexStatus" name="SexStatus" class="frame-style text-style">
-                        <option value="m">Мужчины</option>
-                        <option value="w">Женщины</option>
+                    <select id="SexStatus" name="SexStatus" class="frame-style text-style" required>
+                        <option value="male">Мужчины</option>
+                        <option value="female">Женщины</option>
+                        <option value="all">Мужчины и Женщины</option>
                     </select><br>
                 </div>
                 <div class="buildboardNum-container bottom-padding">
                     <label for="buildboard" class="white-color">Количество билбордов:</label><br>
-                    <input type="number" class="frame-style text-style" id="buildboard" name="buildboard" required min="1" max="10"><br>
+                    <input type="number" class="frame-style text-style" id="buildboard" name="buildboard" required min="1" max="10" required><br>
                 </div>
                 <div>
                     <label for="options" class="white-color">Доходность:</label>
                 </div>
                 <div class="options-container">
-                    <!-- <label for="checkbox" class="white-color">Доходность:</label><br> -->
-                    <input type="checkbox" id="a" name="optionA" value="A">
-                    <label for="optionA">A</label><br>
-                    <input type="checkbox" id="b" name="optionB" value="B">
-                    <label for="optionB">B</label><br>
-                    <input type="checkbox" id="c" name="optionB" value="C">
-                    <label for="optionC">C</label><br>
+                    <input type="checkbox" id="a" name="options" value="a">
+                    <label for="a">A</label><br>
+                    <input type="checkbox" id="b" name="options" value="b">
+                    <label for="b">B</label><br>
+                    <input type="checkbox" id="c" name="options" value="c">
+                    <label for="c">C</label><br>
                 </div>
+                <input type="hidden" id="selectedDistrict" name="selectedDistrict" required>
             </div>
         </form>
         <div class="map-container">
