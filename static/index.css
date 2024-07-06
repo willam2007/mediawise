@@ -27,6 +27,7 @@ header{
     color: white;
     text-align: center;
     font-family: "Montserrat", sans-serif;
+<<<<<<< HEAD
     font-style:italic;
     font-weight: normal;
     text-shadow: 3px 4px 5px rgb(95, 200, 54); 
@@ -34,31 +35,73 @@ header{
     
     font-weight:bold;
     font-size:40px;
+=======
+    font-style:normal;
+    font-weight: normal;
+    /* text-shadow: 3px 4px 5px rgb(95, 200, 54);  */
+    letter-spacing: 2px;
+    
+    font-weight:normal;
+    /* font-size:40px; */
+    font-size: 3vw; /* Относительный размер шрифта */
+>>>>>>> a65be8e51761d5511b193662bafc9e25916028dd
 }
 
 .text-style{
     font-family: 'Inter', sans-serif;
     font-weight: 400; 
+<<<<<<< HEAD
     font-size: 16px;
+=======
+    font-size: 1vw; /* Относительный размер шрифта (18px было)*/
+>>>>>>> a65be8e51761d5511b193662bafc9e25916028dd
     line-height: 150%;
     padding-left: 10px;
 }
 
 .main-container{
     display: flex;
+<<<<<<< HEAD
     padding-top: 50px;
     height: 78vh;
+=======
+    padding-top: 10vh; /* Относительный отступ сверху */
+    /* padding-top: 100px; */
+    height: 70vh;
+    
+>>>>>>> a65be8e51761d5511b193662bafc9e25916028dd
 }
 
 
 #anketaForm{
     display: flex;         /* Включает Flexbox */
     flex-direction: column; /* Ориентирует дочерние элементы в вертикальном направлении */
+<<<<<<< HEAD
     align-items: center;   /* Центрирует дочерние элементы по горизонтали */
     width: 50%;
     /* height: 75vh; */
 }
 
+=======
+    align-items:center;   /* Центрирует дочерние элементы по горизонтали */
+    width: 45%;
+    /* height: 75vh; */
+}
+
+.options-container {
+    background-color: #ffffff;    /* белый фон */
+    border-radius: 10px;            /* скругленные края */
+    padding: 10px;                  /* внутренний отступ */
+    margin-bottom: 20px;            /* отступ снизу */
+    color: #000000;               /* черный цвет текста */
+}
+
+.options-container label {
+    margin-right: 10px; /* отступ между чекбоксами и метками */
+    color: #000000; /* цвет текста меток (белый) */
+}
+
+>>>>>>> a65be8e51761d5511b193662bafc9e25916028dd
 .map-container{
     display: flex;         /* Включает Flexbox */
     flex-direction: column; /* Ориентирует дочерние элементы в вертикальном направлении */
@@ -77,6 +120,7 @@ header{
 }
 
 .frame-style{
+<<<<<<< HEAD
     width: 300px;
     height: 30px;
     border-radius: 8px;
@@ -90,6 +134,23 @@ header{
     border-radius: 8px;
     border: 1px solid #aeaeae !important;
     outline: none;
+=======
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #aeaeae !important;
+    outline: none;
+    font-size: 16px; /* шрифт внутри полей */
+}
+
+.low-high-frame{
+    width: 195px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #aeaeae !important;
+    outline: none;
+    font-size: 16px; /* шрифт внутри полей */
+>>>>>>> a65be8e51761d5511b193662bafc9e25916028dd
 }
 
 .min-max-container{
@@ -166,6 +227,7 @@ body{
     background-color: #ffffff;
 }
 
+<<<<<<< HEAD
 .save-button{
     padding-top: 10px;
     cursor: pointer;
@@ -177,6 +239,8 @@ body{
     cursor: pointer;
 }
 
+=======
+>>>>>>> a65be8e51761d5511b193662bafc9e25916028dd
 
 .footer {
     display: flex;          /* Включает Flexbox */
@@ -192,5 +256,9 @@ body{
     width: 100%;
     min-height: 100px;      /* Задает минимальную высоту футера */
     /* margin-top: 700px; */ /* Закомментировано, если не нужно */
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> a65be8e51761d5511b193662bafc9e25916028dd

@@ -5,7 +5,7 @@ import os
 # Создаем экземпляр Flask-приложения
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/') 
 def home():
     # Отображение главной страницы
     return render_template('index.html')
@@ -16,6 +16,11 @@ def submit():
     age_from = int(request.form.get('age-from'))
     age_to = int(request.form.get('age-to'))
     buildboard_number = int(request.form.get('buildboard'))
+
+    # Получаем выбранные варианты чекбокса
+    selected_options = request.form.getlist('options')
+    print("Выбранные варианты:", selected_options)
+
 
     # Проверка диапазона возраста
     if age_from < 18 or age_from > 80 or age_to < 18 or age_to > 80:
