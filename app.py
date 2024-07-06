@@ -1,7 +1,11 @@
+import sys
 from flask import Flask, request, render_template, redirect, url_for, jsonify
 import subprocess
 import os
-
+# Добавляем путь к папке neyron
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'neyron')))
+# Теперь можно импортировать функцию
+from findbest import predict_best_points
 # Создаем экземпляр Flask-приложения
 app = Flask(__name__)
 
@@ -16,7 +20,7 @@ def submit():
     age_from = int(request.form.get('age-from'))
     age_to = int(request.form.get('age-to'))
     buildboard_number = int(request.form.get('buildboard'))
-
+    gender = request.form.get('SexStatus')  # Получаем выбранный пол
     # Получаем выбранные варианты чекбокса
     selected_options = request.form.getlist('options')
     print("Выбранные варианты:", selected_options)
@@ -29,14 +33,17 @@ def submit():
     # Проверка количества билбордов
     if buildboard_number < 1 or buildboard_number > 10:
         return "Количество билбордов должно быть от 1 до 10", 400
+    district_name = ""
 
+    predict_best_points(gender,age_from, age_to,selected_options,buildboard_number,district_name)
     # Перенаправление на главную страницу после успешной обработки данных
     return redirect(url_for('home'))
 
 @app.route('/set-district', methods=['POST'])
 def set_district():
     # Получение названия района из запроса
-    district_name = request.json['districtName']
+    district_name = ""
+    district_name = request.json['districtName'] 
     print(f"Получено название района: {district_name}")
     
     # Сохранение названия района

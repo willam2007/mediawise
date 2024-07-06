@@ -46,7 +46,11 @@ def predict_best_points(gender, age_from, age_to, income, num_points, zona=""):
     
     # Сортировка точек по предсказанному охвату и выбор лучших
     best_points = data.sort_values(by='predicted_value', ascending=False).head(num_points)
-    
+
+    with open('static/input_data/coordinates.txt', 'w') as f:
+        for index, row in best_points.iterrows():
+            f.write(f"{row['lat']},{row['lon']}\n")
+            
     return best_points[['lat', 'lon', 'azimuth', 'predicted_value']]
 
 if __name__ == "__main__":

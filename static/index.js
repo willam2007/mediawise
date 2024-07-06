@@ -86,8 +86,4 @@ function loadMarkers(data) {
             }
         }
     });
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a65be8e51761d5511b193662bafc9e25916028dd
