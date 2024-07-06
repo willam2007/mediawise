@@ -5,7 +5,7 @@ import os
 # Создаем экземпляр Flask-приложения
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/') 
 def home():
     # Отображение главной страницы
     return render_template('index.html')
