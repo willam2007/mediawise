@@ -71,6 +71,20 @@ function addMarker(lat, lon) {
     DG.marker([lat, lon]).addTo(map);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('anketaForm');
+    const checkboxes = document.querySelectorAll('input[name="options"]');
+    const submitButton = document.querySelector('.firstbutton');
+
+    form.addEventListener('submit', function(event) {
+        const checkedCheckboxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+        if (checkedCheckboxes.length < 1 || checkedCheckboxes.length > 3) {
+            event.preventDefault();
+            alert('Выберите от 1 до 3 вариантов.');
+        }
+    });
+});
+
 function loadMarkers(data) {
     console.log('Loaded data:', data);
     var lines = data.trim().split('\n');

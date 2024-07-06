@@ -50,12 +50,11 @@ def predict_best_points(gender, age_from, age_to, income, num_points, zona=""):
     with open('static/input_data/coordinates.txt', 'w') as f:
         for index, row in best_points.iterrows():
             f.write(f"{row['lat']},{row['lon']}\n")
-            
     return best_points[['lat', 'lon', 'azimuth', 'predicted_value']]
 
 if __name__ == "__main__":
     # Пример использования функции
-    gender = 'male'
+    gender = 'all'
     age_from = 30
     age_to = 50
     income = 'abc'
