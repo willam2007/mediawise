@@ -13,19 +13,6 @@ function resetStyles() {
     }
 }
 
-function sendDistrictName(districtName) {
-    fetch('/set-district', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ districtName: districtName })
-    })
-    .then(response => response.json())
-    .then(data => console.log('Success:', data))
-    .catch((error) => console.error('Error:', error));
-}
-
 function validateForm() {
     document.getElementById('selectedDistrict').value = selectedDistrictName;
     return true;
@@ -57,6 +44,7 @@ DG.then(function () {
                             color: '#000000',
                             weight: 2
                         });
+                        // Отправка названия района на сервер
                         selectedDistrictName = feature.properties.name;
                         sendDistrictName(feature.properties.name);
                     });
@@ -108,3 +96,5 @@ function loadMarkers(data) {
         }
     });
 }
+
+

@@ -5,7 +5,7 @@ from neyron.findbest import predict_best_points  # Импортируем фун
 # Создаем экземпляр Flask-приложения
 app = Flask(__name__)
 
-@app.route('/') 
+@app.route('/')
 def home():
     # Отображение главной страницы
     return render_template('index.html')
@@ -34,7 +34,7 @@ def submit():
         return "Возраст должен быть в диапазоне от 18 до 80 лет", 400
 
     # Проверка количества билбордов
-    if buildboard_number < 1 or buildboard_number > 10:
+    if buildboard_number < 1 or buildboard_number > 50:
         return "Количество билбордов должно быть от 1 до 10", 400
 
     # Вызов функции для генерации лучших точек
