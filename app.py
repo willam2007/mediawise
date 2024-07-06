@@ -17,6 +17,11 @@ def submit():
     age_to = int(request.form.get('age-to'))
     buildboard_number = int(request.form.get('buildboard'))
 
+    # Получаем выбранные варианты чекбокса
+    selected_options = request.form.getlist('options')
+    print("Выбранные варианты:", selected_options)
+
+
     # Проверка диапазона возраста
     if age_from < 18 or age_from > 80 or age_to < 18 or age_to > 80:
         return "Возраст должен быть в диапазоне от 18 до 80 лет", 400
