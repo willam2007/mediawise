@@ -30,7 +30,7 @@
                     <label for="agetext" class="white-color">Возраст:</label><br>
                     <div class="min-max-container">
                         <div class="min_age_container">
-                            <input type="number" class="low-high-frame text-style" id="age-from" name="age-from"
+                            <input type="number" class="low-high-frame text-style" id="age-i" name="age-from"
                                 placeholder="От" min="18" max="80">
                         </div>
                         <div class="max_age_container">
@@ -49,6 +49,18 @@
                 <div class="buildboardNum-container bottom-padding">
                     <label for="buildboard" class="white-color">Количество билбордов:</label><br>
                     <input type="number" class="frame-style text-style" id="buildboard" name="buildboard" required min="1" max="10"><br>
+                </div>
+                <div>
+                    <label for="options" class="white-color">Доходность:</label>
+                </div>
+                <div class="options-container">
+                    <!-- <label for="checkbox" class="white-color">Доходность:</label><br> -->
+                    <input type="checkbox" id="a" name="optionA" value="A">
+                    <label for="optionA">A</label><br>
+                    <input type="checkbox" id="b" name="optionB" value="B">
+                    <label for="optionB">B</label><br>
+                    <input type="checkbox" id="c" name="optionB" value="C">
+                    <label for="optionC">C</label><br>
                 </div>
             </div>
         </form>
