@@ -18,7 +18,8 @@ def submit():
     buildboard_number = int(request.form.get('buildboard'))
     
     # Получаем выбранные варианты чекбокса
-    selected_options = request.form.getlist('options')
+    selected_options = request.form.getlist('options[]')
+    selected_options_str = ''.join(selected_options)
 
 print("Выбранные варианты:", selected_options)
 
@@ -29,6 +30,14 @@ print("Выбранные варианты:", selected_options)
     # Проверка количества билбордов
     if buildboard_number < 1 or buildboard_number > 10:
         return "Количество билбордов должно быть от 1 до 10", 400
+
+    # Возвращение данных в JSON-формате
+    return jsonify({
+        'age_from': age_from,
+        'age_to': age_to,
+        'buildboard_number': buildboard_number,
+        'selected_options': selected_options
+    })
 
     # Перенаправление на главную страницу после успешной обработки данных
     return redirect(url_for('home'))

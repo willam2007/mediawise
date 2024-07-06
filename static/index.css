@@ -184,6 +184,17 @@ body{
     background-color: #ffffff;
 }
 
+.info-container {
+    background-color: white; /* Белый фон */
+    border-radius: 10px; /* Скругленные края */
+    height: 80px; /* Высота 80px */
+    width: 100%; /* Ширина равна ширине #anketaForm */
+    box-shadow: 0 4px 8px rgba(252, 250, 250, 0.1); /* Небольшая тень для объема */
+    padding: 10px; /* Внутренний отступ */
+    box-sizing: border-box; /* Включает padding и border в общую ширину и высоту */
+    overflow: auto; /* Добавляет прокрутку, если содержимое превышает высоту контейнера */
+    margin-top: 20px; /* Дополнительный отступ сверху для разделения от других элементов */
+}
 
 .footer {
     display: flex;          /* Включает Flexbox */

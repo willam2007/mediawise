@@ -101,3 +101,47 @@ function loadMarkers(data) {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('anketaForm');
+    const checkboxes = document.querySelectorAll('input[name="options"]');
+    const submitButton = document.querySelector('.firstbutton');
+
+    form.addEventListener('submit', function(event) {
+        const checkedCheckboxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+        if (checkedCheckboxes.length < 1 || checkedCheckboxes.length > 3) {
+            event.preventDefault();
+            alert('Выберите от 1 до 3 вариантов.');
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('anketaForm');
+    const submitButton = document.querySelector('.firstbutton');
+    const infoContainer = document.getElementById('infoContainer');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Собираем данные формы
+        const formData = new FormData(form);
+        const options = formData.getAll('options').join('');
+        formData.set('options', options);
+
+        // Отправляем данные формы на сервер
+        fetch('/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Обновляем содержимое infoContainer
+            infoContainer.textContent = `Возраст от: ${data.age_from}, до: ${data.age_to}, Количество билбордов: ${data.buildboard_number}, Выбранные варианты: ${data.selected_options}`;
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            infoContainer.textContent = 'Произошла ошибка при отправке данных.';
+        });
+    });
+});
