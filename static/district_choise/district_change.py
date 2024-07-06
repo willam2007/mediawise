@@ -1,12 +1,16 @@
 import json
 from shapely.geometry import shape, Point
 
+
 # Загрузка данных районов
-with open('./static/moscow.geojson', 'r') as f:
+with open('./static/input_data/moscow.geojson', 'r') as f:
     districts = json.load(f)
 
-# Находим полигон для выбранного района
-district_name = "район Ивановское"  # Это значение может быть получено из пользовательского ввода
+# Загрузка выбранного района из файла
+with open('./static/district_choise/district_name.txt', 'r') as file:
+    district_name = file.read().strip()
+    print(district_name)
+
 polygon = None
 for feature in districts['features']:
     if feature['properties']['name'] == district_name:
@@ -19,7 +23,7 @@ if polygon is None:
     raise ValueError("Район не найден")
 
 # Загрузка данных о рекламе
-with open('./static/train_data.json', 'r') as f:
+with open('./static/input_data/train_data.json', 'r') as f:
     ads = json.load(f)
 
 # Фильтрация данных, включение только тех точек, которые находятся внутри полигона
@@ -35,5 +39,5 @@ for ad in ads:
         filtered_ads.append(ad)
 
 # Сохранение отфильтрованных данных
-with open('./static/filtered_train_data.json', 'w') as f:
+with open('./static/district_choise/filtered_train_data.json', 'w') as f:
     json.dump(filtered_ads, f, indent=4)

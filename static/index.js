@@ -1,104 +1,89 @@
-// DG.then(function () {
-//     var map = DG.map('map', {
-//         center: [55.752, 37.617],
-//         zoom: 10
-//     });
-
-//     // Загрузка GeoJSON и добавление его на карту
-//     fetch('../static/moscow.geojson')
-//         .then(function(response) { return response.json(); })
-//         .then(function(data) {
-//             DG.geoJson(data, {
-//                 onEachFeature: function (feature, layer) {
-//                     layer.bindPopup('Вы выбрали: ' + feature.properties.name);
-
-//                     // Добавить событие клика, если нужно
-//                     layer.on('click', function() {
-//                         //alert('Район: ' + feature.properties.name);
-//                         //resetStyles();
-//                         layer.setStyle({
-//                             fillColor: '#3366ff', // Цвет заливки выбранного полигона
-//                             fillOpacity: 0.5,    // Полупрозрачная заливка для выбранного полигона
-//                             color: '#000000',    // Черный цвет границ выбранного полигона
-//                             weight: 2            // Толщина границ выбранного полигона
-//                         });
-//                         // Можно добавить другие взаимодействия, например, обновление данных на странице
-//                     });
-
-//                     // Настройка визуального стиля полигонов
-//                     layer.setStyle({
-//                         fillColor: '#3366ff',
-//                         fillOpacity: 0,
-//                         color: '#2d3e50',
-//                         weight: 2
-//                     });
-//                 }
-//             }).addTo(map);
-//         });
-// });
-
-// function resetStyles() {
-//     map.eachLayer(function (layer) {
-//         layer.setStyle({
-//             fillColor: '#ffffff',
-//             fillOpacity: 0,
-//             color: '#000000',
-//             weight: 2
-//         });
-//     });
-// }
-
-
 var geoJsonLayers = [];  // Массив для хранения ссылок на слои GeoJSON
+var map;  // Глобальная переменная для хранения карты
 
-// Функция, которая сбрасывает стили для всех слоев полигонов
 function resetStyles() {
-    // Итерация по массиву слоёв полигонов
     for (var i = 0; i < geoJsonLayers.length; i++) {
         geoJsonLayers[i].setStyle({
-            fillColor: '#ffffff', // установка фона полигонов на прозрачный
-            fillOpacity: 0,       // прозрачность фона
-            color: '#000000',     // цвет границ полигонов
-            weight: 2             // толщина границ
+            fillColor: '#ffffff', // Установка фона полигонов на прозрачный
+            fillOpacity: 0,       // Прозрачность фона
+            color: '#000000',     // Цвет границ полигонов
+            weight: 2             // Толщина границ
         });
     }
 }
 
+function sendDistrictName(districtName) {
+    fetch('/set-district', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ districtName: districtName })
+    })
+    .then(response => response.json())
+    .then(data => console.log('Success:', data))
+    .catch((error) => console.error('Error:', error));
+}
+
 DG.then(function () {
-    var map = DG.map('map', {
+    map = DG.map('map', {
         center: [55.752, 37.617],
         zoom: 10
     });
 
-    // Загрузка и добавление GeoJSON на карту
-    fetch('../static/moscow.geojson')
-        .then(function(response) { return response.json(); })
-        .then(function(data) {
+    fetch('../static/input_data/moscow.geojson')
+        .then(response => response.json())
+        .then(data => {
             DG.geoJson(data, {
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup('Вы выбрали: ' + feature.properties.name);
-                    // Установка начального стиля для полигонов
                     layer.setStyle({
                         fillColor: '#ffffff',
                         fillOpacity: 0,
                         color: '#000000',
                         weight: 2
                     });
-
-                    // Обработчик клика по полигону
                     layer.on('click', function () {
-                        resetStyles();  // Сброс стилей всех полигонов
-                        layer.setStyle({  // Применение нового стиля для выбранного полигона
+                        resetStyles();
+                        layer.setStyle({
                             fillColor: '#3366ff',
                             fillOpacity: 0.5,
                             color: '#000000',
                             weight: 2
                         });
+                        sendDistrictName(feature.properties.name);
                     });
-
-                    // Добавление ссылки на слой в массив
                     geoJsonLayers.push(layer);
                 }
             }).addTo(map);
+            loadCoordinates();  // Вызываем загрузку координат после инициализации карты
         });
 });
+
+function loadCoordinates() {
+    fetch('../static/input_data/coordinates.txt')
+        .then(response => response.text())
+        .then(data => loadMarkers(data))
+        .catch(error => console.error('Ошибка загрузки координат:', error));
+}
+
+function addMarker(lat, lon) {
+    DG.marker([lat, lon]).addTo(map);
+}
+
+function loadMarkers(data) {
+    console.log('Loaded data:', data);
+    var lines = data.trim().split('\n');
+    lines.forEach(function(line) {
+        var coords = line.split(',');
+        if (coords.length === 2) {
+            var lat = parseFloat(coords[0]);
+            var lon = parseFloat(coords[1]);
+            if (!isNaN(lat) && !isNaN(lon)) {
+                addMarker(lat, lon);
+            } else {
+                console.error('Неверный формат координат:', line);
+            }
+        }
+    });
+}
