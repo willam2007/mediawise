@@ -15,13 +15,10 @@
         DG.then(function () {
             map = DG.map('map', {
                 center: [55.75, 37.65],
-                zoom: 10
+                zoom: 11
                 
             });
-            DG.marker([54.98, 82.89]).addTo(map);
-            var southWest = DG.latLng(54.9801, 82.8974),
-    northEast = DG.latLng(54.9901, 82.9074),
-    bounds = DG.latLngBounds(southWest, northEast);
+            DG.marker([55.75, 37.65]).addTo(map);
         });
     </script>
 </head>
@@ -73,13 +70,10 @@
                     <label for="buildboard" class="white-color">Количество билбордов:</label><br>
                     <input type="number" class="frame-style text-style" id="buildboard" name="buildboard" required min="1" max="10"><br>
                 </div>
-                <div class="save-button bottom-padding">
-                    <input type="submit" class="frame-style text-style extended-save-frame" value="Отправить">
-                </div>
             </div>
         </form>
         <div class="map-container">
-            <div id="map" style="width:80%; height:60%"></div>
+            <div id="map" style="width:80%; height:70%"></div>
         </div>
     </div>
     <div class="bbutton">

@@ -27,35 +27,38 @@ header{
     color: white;
     text-align: center;
     font-family: "Montserrat", sans-serif;
-    font-style:italic;
+    font-style:normal;
     font-weight: normal;
-    text-shadow: 3px 4px 5px rgb(95, 200, 54); 
+    /* text-shadow: 3px 4px 5px rgb(95, 200, 54);  */
     letter-spacing: 2px;
     
-    font-weight:bold;
-    font-size:40px;
+    font-weight:normal;
+    /* font-size:40px; */
+    font-size: 3vw; /* Относительный размер шрифта */
 }
 
 .text-style{
     font-family: 'Inter', sans-serif;
     font-weight: 400; 
-    font-size: 16px;
+    font-size: 1vw; /* Относительный размер шрифта (18px было)*/
     line-height: 150%;
     padding-left: 10px;
 }
 
 .main-container{
     display: flex;
-    padding-top: 50px;
-    height: 78vh;
+    padding-top: 10vh; /* Относительный отступ сверху */
+    /* padding-top: 100px; */
+    height: 70vh;
+    
 }
 
 
 #anketaForm{
     display: flex;         /* Включает Flexbox */
     flex-direction: column; /* Ориентирует дочерние элементы в вертикальном направлении */
-    align-items: center;   /* Центрирует дочерние элементы по горизонтали */
-    width: 50%;
+    align-items:center;   /* Центрирует дочерние элементы по горизонтали */
+    width: 45%;
     /* height: 75vh; */
 }
 
@@ -77,19 +80,21 @@ header{
 }
 
 .frame-style{
-    width: 300px;
-    height: 30px;
-    border-radius: 8px;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
     border: 1px solid #aeaeae !important;
     outline: none;
+    font-size: 16px; /* шрифт внутри полей */
 }
 
 .low-high-frame{
-    width: 145px;
-    height: 30px;
+    width: 195px;
+    height: 40px;
     border-radius: 8px;
     border: 1px solid #aeaeae !important;
     outline: none;
+    font-size: 16px; /* шрифт внутри полей */
 }
 
 .min-max-container{
@@ -164,17 +169,6 @@ body{
 
 .firstbutton:hover {
     background-color: #ffffff;
-}
-
-.save-button{
-    padding-top: 10px;
-    cursor: pointer;
-}
-
-.save-button input{
-    background-color: #ffffff;
-    color: #000;
-    cursor: pointer;
 }
 
 
