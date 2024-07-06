@@ -28,6 +28,7 @@ header{
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-style:normal;
+    font-style:normal;
     font-weight: normal;
     /* text-shadow: 3px 4px 5px rgb(95, 200, 54);  */
     letter-spacing: 2px;
@@ -60,6 +61,19 @@ header{
     align-items:center;   /* Центрирует дочерние элементы по горизонтали */
     width: 45%;
     /* height: 75vh; */
+}
+
+.options-container {
+    background-color: #ffffff;    /* белый фон */
+    border-radius: 10px;            /* скругленные края */
+    padding: 10px;                  /* внутренний отступ */
+    margin-bottom: 20px;            /* отступ снизу */
+    color: #000000;               /* черный цвет текста */
+}
+
+.options-container label {
+    margin-right: 10px; /* отступ между чекбоксами и метками */
+    color: #000000; /* цвет текста меток (белый) */
 }
 
 .options-container {
@@ -184,6 +198,17 @@ body{
     background-color: #ffffff;
 }
 
+.info-container {
+    background-color: white; /* Белый фон */
+    border-radius: 10px; /* Скругленные края */
+    height: 80px; /* Высота 80px */
+    width: 100%; /* Ширина равна ширине #anketaForm */
+    box-shadow: 0 4px 8px rgba(252, 250, 250, 0.1); /* Небольшая тень для объема */
+    padding: 10px; /* Внутренний отступ */
+    box-sizing: border-box; /* Включает padding и border в общую ширину и высоту */
+    overflow: auto; /* Добавляет прокрутку, если содержимое превышает высоту контейнера */
+    margin-top: 20px; /* Дополнительный отступ сверху для разделения от других элементов */
+}
 
 .footer {
     display: flex;          /* Включает Flexbox */

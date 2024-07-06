@@ -1,5 +1,6 @@
 var geoJsonLayers = [];  // Массив для хранения ссылок на слои GeoJSON
 var map;  // Глобальная переменная для хранения карты
+var selectedDistrictName = null;  // Переменная для хранения выбранного района
 
 function resetStyles() {
     for (var i = 0; i < geoJsonLayers.length; i++) {
@@ -12,17 +13,9 @@ function resetStyles() {
     }
 }
 
-function sendDistrictName(districtName) {
-    fetch('/set-district', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ districtName: districtName })
-    })
-    .then(response => response.json())
-    .then(data => console.log('Success:', data))
-    .catch((error) => console.error('Error:', error));
+function validateForm() {
+    document.getElementById('selectedDistrict').value = selectedDistrictName;
+    return true;
 }
 
 DG.then(function () {
@@ -51,6 +44,8 @@ DG.then(function () {
                             color: '#000000',
                             weight: 2
                         });
+                        // Отправка названия района на сервер
+                        selectedDistrictName = feature.properties.name;
                         sendDistrictName(feature.properties.name);
                     });
                     geoJsonLayers.push(layer);
@@ -101,3 +96,5 @@ function loadMarkers(data) {
         }
     });
 }
+
+
