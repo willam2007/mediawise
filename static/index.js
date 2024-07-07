@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>Количество билбордов: ${data.buildboard_number}</p>
                     <p>Доход: ${data.selected_options}</p>
                     <p>Район: ${data.selected_district}</p>
+                    <p>Предсказанная эффективность: ${point.predicted_value}</p>
                 `;
                 resultsContainer.appendChild(resultItem);
                 

@@ -21,6 +21,8 @@ def submit():
     selected_options = request.form.getlist('options')
     selected_options_str = ''.join(selected_options)
     selected_district = request.form.get('selectedDistrict')
+    if selected_district == 'null':
+        selected_district = ''
 
     print(f"Возраст от: {age_from}, до: {age_to}")
     print(f"Пол: {sex_status}")
