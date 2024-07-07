@@ -1,6 +1,7 @@
 <h1 align="center">Всем здравствуйте, мы команда IGKA</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h2 align="center">Наш проект по кейсу media wise</h2>
+<h2> Ссылка на скринкаст и презентацию https://disk.yandex.ru/d/zRWScVoJrxJpHA </h2>
 <h2>Чтобы запустить локально, то просто клонируйте или скачайте наш проект, и запустите сервер через консоль командой python app.py</h2>
 <p>также необходимо подгрузить все зависимости через pip install -r requirements.txt</p>
 <p> В случае того если возникает ошибка - не хватает модуля (тестили с разных устройств - такое бывает), 
