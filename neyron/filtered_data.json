@@ -1,9 +1,15 @@
 [
     {
         "hash": "b00a8c66eec04b18",
+<<<<<<< HEAD
         "lat": "55.707666436879",
         "lon": "37.666396989397",
         "azimuth": 233,
+=======
+        "lat": "55.842645752362",
+        "lon": "37.383330587546",
+        "azimuth": 128,
+>>>>>>> SiteBranch
         "value": 96.75,
         "gender": "all",
         "ageFrom": 25,
@@ -11,6 +17,7 @@
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "b00a8c66eec04b18",
         "lat": "55.69947660683",
         "lon": "37.666745304859",
@@ -27,12 +34,31 @@
         "lon": "37.621478065641",
         "azimuth": 184,
         "value": 96.75,
+=======
+        "hash": "f9b7b5124f8d94e5",
+        "lat": "55.845322323509",
+        "lon": "37.37777289787",
+        "azimuth": 131,
+        "value": 96.59,
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
-        "income": "bc"
+        "income": "abc"
     },
     {
+        "hash": "f9b7b5124f8d94e5",
+        "lat": "55.844814265233",
+        "lon": "37.378036739327",
+        "azimuth": 308,
+        "value": 96.59,
+>>>>>>> SiteBranch
+        "gender": "all",
+        "ageFrom": 25,
+        "ageTo": 50,
+        "income": "abc"
+    },
+    {
+<<<<<<< HEAD
         "hash": "b00a8c66eec04b18",
         "lat": "55.710025",
         "lon": "37.621188",
@@ -105,11 +131,97 @@
         "azimuth": 8,
         "value": 96.75,
         "gender": "all",
+=======
+        "hash": "e620e76b7db30861",
+        "lat": "55.85001419549",
+        "lon": "37.368455402447",
+        "azimuth": 131,
+        "value": 96.19,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "abc"
+    },
+    {
+        "hash": "e620e76b7db30861",
+        "lat": "55.849733541708",
+        "lon": "37.368015520168",
+        "azimuth": 312,
+        "value": 96.19,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "abc"
+    },
+    {
+        "hash": "e620e76b7db30861",
+        "lat": "55.856231207453",
+        "lon": "37.354755402447",
+        "azimuth": 316,
+        "value": 96.19,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "abc"
+    },
+    {
+        "hash": "fc444dcb6757dadf",
+        "lat": "55.833601506324",
+        "lon": "37.389003440475",
+        "azimuth": 332,
+        "value": 95.97,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "abc"
+    },
+    {
+        "hash": "fc444dcb6757dadf",
+        "lat": "55.833627820516",
+        "lon": "37.388872588053",
+        "azimuth": 66,
+        "value": 95.97,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "abc"
+    },
+    {
+        "hash": "460f784f913d6df1",
+        "lat": "55.847320526171",
+        "lon": "37.359486342258",
+        "azimuth": 311,
+        "value": 55.45,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "abc"
+    },
+    {
+        "hash": "8bcecfbac19acd4a",
+        "lat": "55.831162",
+        "lon": "37.394454",
+        "azimuth": 8,
+        "value": 46.14,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "bc"
+    },
+    {
+        "hash": "4876a5952510eb9e",
+        "lat": "55.841464153912",
+        "lon": "37.385085459642",
+        "azimuth": 138,
+        "value": 37.82,
+        "gender": "female",
+>>>>>>> SiteBranch
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "b00a8c66eec04b18",
         "lat": "55.717293084327",
         "lon": "37.663555233135",
@@ -181,23 +293,39 @@
         "lon": "37.66140639782",
         "azimuth": 217,
         "value": 96.75,
+=======
+        "hash": "f0c55bbf0a6794cd",
+        "lat": "55.828973740654",
+        "lon": "37.370651449074",
+        "azimuth": 71,
+        "value": 35.2,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "b00a8c66eec04b18",
         "lat": "55.704567750013",
         "lon": "37.633779242614",
         "azimuth": 282,
         "value": 96.75,
+=======
+        "hash": "f0c55bbf0a6794cd",
+        "lat": "55.833176895032",
+        "lon": "37.392982047225",
+        "azimuth": 117,
+        "value": 35.2,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "b00a8c66eec04b18",
         "lat": "55.710134222243",
         "lon": "37.665857543551",
@@ -236,45 +364,110 @@
         "lon": "37.621076",
         "azimuth": 8,
         "value": 96.75,
+=======
+        "hash": "50b663bd2cc1ab3b",
+        "lat": "55.853739133067",
+        "lon": "37.342672078539",
+        "azimuth": 359,
+        "value": 8.78,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "abc"
+    },
+    {
+        "hash": "50b663bd2cc1ab3b",
+        "lat": "55.84493881197",
+        "lon": "37.365313338623",
+        "azimuth": 316,
+        "value": 8.78,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "abc"
+    },
+    {
+        "hash": "50b663bd2cc1ab3b",
+        "lat": "55.851576072356",
+        "lon": "37.34285465159",
+        "azimuth": 344,
+        "value": 8.78,
+        "gender": "all",
+        "ageFrom": 18,
+        "ageTo": 100,
+        "income": "abc"
+    },
+    {
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.839826747821",
+        "lon": "37.379257204205",
+        "azimuth": 218,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "b00a8c66eec04b18",
         "lat": "55.70329215225",
         "lon": "37.655784487724",
         "azimuth": 81,
         "value": 96.75,
+=======
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.849585091282",
+        "lon": "37.365572830688",
+        "azimuth": 247,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "b00a8c66eec04b18",
         "lat": "55.70444121444",
         "lon": "37.634783456084",
         "azimuth": 285,
         "value": 96.75,
+=======
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.83703778845",
+        "lon": "37.387143641035",
+        "azimuth": 165,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "b00a8c66eec04b18",
         "lat": "55.711048168298",
         "lon": "37.665482275458",
         "azimuth": 356,
         "value": 96.75,
+=======
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.846994081262",
+        "lon": "37.373664542328",
+        "azimuth": 311,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "7589233db3587624",
         "lat": "55.703440806784",
         "lon": "37.65725510416",
@@ -434,12 +627,20 @@
         "lon": "37.606700062752",
         "azimuth": 195,
         "value": 65.35,
+=======
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.83052415465",
+        "lon": "37.363845028276",
+        "azimuth": 277,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 18,
         "ageTo": 55,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "0038e05f5cae8b3e",
         "lat": "55.718218587281",
         "lon": "37.622149586678",
@@ -456,34 +657,58 @@
         "lon": "37.661067236771",
         "azimuth": 182,
         "value": 65.35,
+=======
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.831161706371",
+        "lon": "37.355673645334",
+        "azimuth": 96,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 18,
         "ageTo": 55,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "0038e05f5cae8b3e",
         "lat": "55.722383339677",
         "lon": "37.655614330025",
         "azimuth": 28,
         "value": 65.35,
+=======
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.832899230756",
+        "lon": "37.391770464349",
+        "azimuth": 103,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 18,
         "ageTo": 55,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "460f784f913d6df1",
         "lat": "55.708813291635",
         "lon": "37.657429576034",
         "azimuth": 7,
         "value": 55.45,
+=======
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.859591358095",
+        "lon": "37.345303320119",
+        "azimuth": 216,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 18,
         "ageTo": 100,
         "income": "abc"
     },
     {
+<<<<<<< HEAD
         "hash": "460f784f913d6df1",
         "lat": "55.704526660439",
         "lon": "37.63851353373",
@@ -500,34 +725,58 @@
         "lon": "37.607",
         "azimuth": 192,
         "value": 55.36,
+=======
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.833596012648",
+        "lon": "37.348605580357",
+        "azimuth": 38,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "f625be1f3219ea64",
         "lat": "55.708430734528",
         "lon": "37.618615409051",
         "azimuth": 180,
         "value": 55.36,
+=======
+        "hash": "1fa3dd149f1a1766",
+        "lat": "55.86455631",
+        "lon": "37.36574602",
+        "azimuth": 308,
+        "value": 4.13,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "f625be1f3219ea64",
         "lat": "55.71138787456314",
         "lon": "37.612872719408585",
         "azimuth": 273,
         "value": 55.36,
+=======
+        "hash": "c39c67f6182694d8",
+        "lat": "55.845769972416",
+        "lon": "37.379056560943",
+        "azimuth": 245,
+        "value": 3.61,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
     },
     {
+<<<<<<< HEAD
         "hash": "9107aab331034651",
         "lat": "55.708824063322",
         "lon": "37.657341420797",
@@ -1171,10 +1420,18 @@
         "lon": "37.637967467878",
         "azimuth": 284,
         "value": 7.72,
+=======
+        "hash": "c39c67f6182694d8",
+        "lat": "55.854464044127",
+        "lon": "37.358438565641",
+        "azimuth": 128,
+        "value": 3.61,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 25,
         "ageTo": 50,
         "income": "bc"
+<<<<<<< HEAD
     },
     {
         "hash": "1fa3dd149f1a1766",
@@ -1369,10 +1626,20 @@
         "lon": "37.622187095701",
         "azimuth": 4,
         "value": 1.1,
+=======
+    },
+    {
+        "hash": "01ff3d5c2d547ada",
+        "lat": "55.840765256943",
+        "lon": "37.375147640705",
+        "azimuth": 120,
+        "value": 0.07,
+>>>>>>> SiteBranch
         "gender": "all",
         "ageFrom": 18,
         "ageTo": 100,
         "income": "abc"
+<<<<<<< HEAD
     },
     {
         "hash": "7912966c574db733",
@@ -1439,5 +1706,7 @@
         "ageFrom": 25,
         "ageTo": 45,
         "income": "bc"
+=======
+>>>>>>> SiteBranch
     }
 ]
