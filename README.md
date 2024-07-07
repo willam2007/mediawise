@@ -2,6 +2,7 @@
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h2 align="center">Наш проект по кейсу media wise</h2>
 <h2>Чтобы запустить локально, то просто клонируйте или скачайте наш проект, и запустите сервер через консоль командой python app.py</h2>
+<p>также необходимо подгрузить все зависимости через pip install -r requirements.txt</p>
 <h2 align="center">Либо просто перейдите по нашей ссылке!</h2>
 <h2 align="center"><a href="https://igka.tech">igka.tech</a></h2>
 <h3>С использованием html, css, Java script, Python, Flask и GradientBoostingRegressor, мы смогли реализовать поставленную задачу</h3>
