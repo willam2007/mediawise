@@ -3,6 +3,11 @@
 <h2 align="center">Наш проект по кейсу media wise</h2>
 <h2>Чтобы запустить локально, то просто клонируйте или скачайте наш проект, и запустите сервер через консоль командой python app.py</h2>
 <p>также необходимо подгрузить все зависимости через pip install -r requirements.txt</p>
+<p> В случае того если возникает ошибка - не хватает модуля (тестили с разных устройств - такое бывает), 
+то установить их через команду pip install <название модуля> </p>
+<p> Также в файле app.py, могут возникнуть ошибки с доступом папки, если вы тестируте на MACOS, то замените строку с ошибкой на 
+from flask import Flask, request, render_template, jsonify, session
+from neyron.findbest import predict_best_points  # Импортируем функцию </p>
 <h2 align="center">Либо просто перейдите по нашей ссылке!</h2>
 <h2 align="center"><a href="https://igka.tech">igka.tech</a></h2>
 <h3>С использованием html, css, Java script, Python, Flask и GradientBoostingRegressor, мы смогли реализовать поставленную задачу</h3>
