@@ -225,3 +225,30 @@ body{
     min-height: 100px;      /* Задает минимальную высоту футера */
     /* margin-top: 700px; */ /* Закомментировано, если не нужно */
 }
+
+.results-container {
+    background-color: #f8f8f8; /* Светлый фон */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 20px; /* Внутренний отступ */
+    margin-top: 20px; /* Отступ сверху */
+    width: 80%; /* Ширина контейнера */
+    margin: 20px auto; /* Центрирование контейнера */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.result-item {
+    background-color: #ffffff; /* Белый фон для каждого результата */
+    border: 1px solid #dcdcdc; /* Граница */
+    border-radius: 5px; /* Скругленные углы */
+    padding: 10px; /* Внутренний отступ */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.result-item h3 {
+    margin-top: 0;
+}
+
+.result-item p {
+    margin: 5px 0;
+}
+

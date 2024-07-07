@@ -1,6 +1,7 @@
 var geoJsonLayers = [];  // Массив для хранения ссылок на слои GeoJSON
 var map;  // Глобальная переменная для хранения карты
 var selectedDistrictName = null;  // Переменная для хранения выбранного района
+var markers = [];  // Массив для хранения ссылок на маркеры
 
 function resetStyles() {
     for (var i = 0; i < geoJsonLayers.length; i++) {
@@ -11,6 +12,24 @@ function resetStyles() {
             weight: 2             // Толщина границ
         });
     }
+}
+
+function sendDistrictName(districtName) {
+    fetch('/set-district', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ districtName: districtName })
+    })
+    .then(response => response.json())
+    .then(data => console.log('Success:', data))
+    .catch((error) => console.error('Error:', error));
+}
+
+function clearMarkers() {
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
 }
 
 function validateForm() {
@@ -63,24 +82,12 @@ function loadCoordinates() {
 }
 
 function addMarker(lat, lon) {
-    DG.marker([lat, lon]).addTo(map);
+    const marker = DG.marker([lat, lon]).addTo(map);
+    markers.push(marker);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('anketaForm');
-    const checkboxes = document.querySelectorAll('input[name="options"]');
-    const submitButton = document.querySelector('.firstbutton');
-
-    form.addEventListener('submit', function(event) {
-        const checkedCheckboxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
-        if (checkedCheckboxes.length < 1 || checkedCheckboxes.length > 3) {
-            event.preventDefault();
-            alert('Выберите от 1 до 3 вариантов.');
-        }
-    });
-});
-
 function loadMarkers(data) {
+    clearMarkers();
     console.log('Loaded data:', data);
     var lines = data.trim().split('\n');
     lines.forEach(function(line) {
@@ -97,4 +104,57 @@ function loadMarkers(data) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Очищаем координаты при загрузке страницы
+    fetch('/clear-coordinates', { method: 'POST' })
+        .then(() => console.log('Coordinates cleared'))
+        .catch(error => console.error('Error clearing coordinates:', error));
 
+    const form = document.getElementById('anketaForm');
+    const resultsContainer = document.getElementById('resultsContainer');
+    const checkboxes = document.querySelectorAll('input[name="options"]');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(form);
+        const options = formData.getAll('options').join('');
+        formData.set('options', options);
+
+        formData.set('selectedDistrict', selectedDistrictName);
+
+        fetch('/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            resultsContainer.innerHTML = '';
+            clearMarkers();  // Очищаем существующие маркеры
+            data.best_points.forEach(point => {
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item');
+
+                resultItem.innerHTML = `
+                    <h3>Координаты: ${point.lat}, ${point.lon}</h3>
+                    <p>Возраст от: ${data.age_from}, до: ${data.age_to}</p>
+                    <p>Пол: ${data.sex_status}</p>
+                    <p>Количество билбордов: ${data.buildboard_number}</p>
+                    <p>Доход: ${data.selected_options}</p>
+                    <p>Район: ${data.selected_district}</p>
+                `;
+                resultsContainer.appendChild(resultItem);
+                
+                // Добавление меток на карту
+                addMarker(point.lat, point.lon);
+            });
+            resultsContainer.classList.remove('typewriter'); // Убираем класс для перезапуска анимации
+            void resultsContainer.offsetWidth; // Триггер для перезапуска анимации
+            resultsContainer.classList.add('typewriter');
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            resultsContainer.textContent = 'Произошла ошибка при отправке данных.';
+        });
+    });
+});
