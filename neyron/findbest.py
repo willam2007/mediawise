@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import joblib
 import json
-from .prop import fileforkolya  # Импорт функции fileforkolya
+from prop import fileforkolya  # Импорт функции fileforkolya
 
 # Загрузка обученной модели и нормализатора
 model = joblib.load('best_gb_model.pkl')
