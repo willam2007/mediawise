@@ -1,6 +1,6 @@
 <h1 align="center">Всем здравствуйте, мы команда IGKA</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-<h3 align="center">Наш проект по кейсу media wise</h3>
+<h2 align="center">Наш проект по кейсу media wise</h2>
 <h2>Чтобы запустить локально, то просто клонируйте или скачайте наш проект, и запустите сервер через консоль командой python app.py</h2>
 <h2 align="center">Либо просто перейдите по нашей ссылке!</h2>
 <h2 align="center"><a href="https://igka.tech">igka.tech</a></h2>
