@@ -4,7 +4,6 @@
 <h2>Чтобы запустить локально, то просто клонируйте или скачайте наш проект, и запустите сервер через консоль командой python app.py</h2>
 <h2 align="center">Либо просто перейдите по нашей ссылке!</h2>
 <h2 align="center"><a href="https://igka.tech">igka.tech</a></h2>
-This site was built using [GitHub Pages](https://pages.github.com/).
 <h3>С использованием html, css, Java script, Python, Flask и GradientBoostingRegressor, мы смогли реализовать поставленную задачу</h3>
 <h3>В веб-интерфейсе есть поля для ввода возраста</h3>
 <h4>Первое поля будет началом, а второе концом. То есть От и До</h4>
